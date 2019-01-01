@@ -1,0 +1,22 @@
+# Reference: <https://postmarketos.org/devicepkg>
+pkgname="device-huawei-cameron"
+pkgdesc="Huawei Mediapad M5 Pro"
+pkgver=0.1
+pkgrel=0
+url="https://postmarketos.org"
+license="MIT"
+arch="noarch"
+options="!check"
+depends="postmarketos-base linux-huawei-cameron mkbootimg mesa-dri-swrast"
+makedepends="devicepkg-dev"
+source="deviceinfo"
+
+build() {
+	devicepkg_build $startdir $pkgname
+}
+
+package() {
+	devicepkg_package $startdir $pkgname
+}
+
+sha512sums="f6adbbe0c8e9656c2f696ff4ccd388d130966617da7329b5f2e3ad887ae03862738d9d7f5de68fcd8323632ae5c3b06bbd3b28474afc882f19344e6d9c3044f2  deviceinfo"
